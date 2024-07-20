@@ -1,47 +1,37 @@
 # 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
 
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
+Este projeto tem como objetivo construir um modelo de previsão de estoque utilizando o Amazon SageMaker Canvas, bem como analisar as métricas de performance do modelo.
+## Importância das variáveis
+A variável resposta ou *target* do nosso modelo foi a variável *stock_level (indica a quantidade de produtos em estoque)*.
 
-## 📋 Pré-requisitos
+Inicialmente, 4 variáveis foram utilizadas como *features*, sendo elas:
+* X_1 - units_sold (unidades vendidas)
+* X_2 - day_of_week (dia da semana)
+* X_3 - holiday (feriado, sendo 1 = feriado, 0 = não feriado)
+* X_4 - promotion (promoção, 1 = produto em promoção, 0 = preço normal)
 
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
+O modelo utilizado concluiu que apenas as variáveis X_1 e X_2 tiveram impacto no modelo, sendo 
+X_1 - 31,67% de impacto
+X_2 - 3,5% de impacto
 
+## Indicadores de Performance
+MAPE: 1.642
+O valor do MAPE obtido, significa que o nosso modelo tende a errar em 164,2% os valores reais do estoque.
 
-## 🎯 Objetivos Deste Desafio de Projeto (Lab)
+RMSE: 30,304
+O valor no RMSE obtido, nos mostra que em média, tendemos a errar em 30 unidades os valores dos produtos. 
 
-![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/72f5c21f-5562-491e-aa42-2885a3184650)
+## O modelo é satisfatório?
+Como o valor do MAPE é alto e o RMSE também (visto que a média de estoque dos produtos é 46,65), podemos dizer que o nosso modelo não é satisfatório e deveríamos buscar técnicas diferentes ou então melhores *features* para ajustar o nosso modelo, uma *feature* interessante poderia ser o valor de venda ou então o valor de compra, já que seria mais simples para a empresa manter valores de baixo custo no estoque, deixando assim menos "dinheiro parado", outra possibilidade seria as dimensões do produto, já que produtos de maiores dimensões geram mais custos.
 
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
+O indicador MASE tem um valor de 0,855, o que nos mostra que apesar do modelo não ser satisfatório é melhor que o modelo simples, ou seja, o nosso modelo é melhor do que simplesmente utilizar o valor anterior (do dia anterior) para controlar o nosso estoque.
 
+## Previsões
+A previsão de estoque para 5 dias do produto 1 é: 
+![single_prediction_results](https://github.com/user-attachments/assets/37724298-77b6-42b2-84f5-5f3e96a01f0c)
 
-## 🚀 Passo a Passo
+A previsão de estoque para 5 dias do produto 2 é: 
+![single_prediction_results (1)](https://github.com/user-attachments/assets/2b993b12-443a-46ec-b1df-f4706a42a1e5)
 
-### 1. Selecionar Dataset
-
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
-
-### 2. Construir/Treinar
-
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
-
-### 3. Analisar
-
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
-
-### 4. Prever
-
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
-
-## 🤔 Dúvidas?
-
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+A previsão de estoque para 5 dias do produto 3 é: 
+![single_prediction_results (2)](https://github.com/user-attachments/assets/0a1caa1c-ef37-4092-8429-bc1384092612)
