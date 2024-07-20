@@ -10,15 +10,17 @@ Inicialmente, 4 variáveis foram utilizadas como *features*, sendo elas:
 * X<sub>3</sub> - holiday (feriado, sendo 1 = feriado, 0 = não feriado)
 * X<sub>4</sub> - promotion (promoção, 1 = produto em promoção, 0 = preço normal)
 
-O modelo utilizado concluiu que apenas as variáveis X<sub>1</sub> e X<sub>2</sub> tiveram impacto no modelo, sendo 
-X<sub>1</sub> - 31,67% de impacto
-X<sub>2</sub> - 3,5% de impacto
+O modelo utilizado concluiu que apenas as variáveis X<sub>1</sub> e X<sub>2</sub> tiveram impacto no modelo, sendo:
+* X<sub>1</sub> - 31,67% de impacto
+* X<sub>2</sub> - 3,5% de impacto
 
 ## Indicadores de Performance
 MAPE: 1.642
+
 O valor do MAPE obtido, significa que o nosso modelo tende a errar em 164,2% os valores reais do estoque.
 
 RMSE: 30,304
+
 O valor no RMSE obtido, nos mostra que em média, tendemos a errar em 30 unidades os valores dos produtos. 
 
 ## O modelo é satisfatório?
