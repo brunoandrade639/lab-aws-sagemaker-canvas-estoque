@@ -5,14 +5,14 @@ Este projeto tem como objetivo construir um modelo de previsão de estoque utili
 A variável resposta ou *target* do nosso modelo foi a variável *stock_level (indica a quantidade de produtos em estoque)*.
 
 Inicialmente, 4 variáveis foram utilizadas como *features*, sendo elas:
-* X_1 - units_sold (unidades vendidas)
-* X_2 - day_of_week (dia da semana)
-* X_3 - holiday (feriado, sendo 1 = feriado, 0 = não feriado)
-* X_4 - promotion (promoção, 1 = produto em promoção, 0 = preço normal)
+* X<sub>1</sub> - units_sold (unidades vendidas)
+* X<sub>2</sub> - day_of_week (dia da semana)
+* X<sub>3</sub> - holiday (feriado, sendo 1 = feriado, 0 = não feriado)
+* X<sub>4</sub> - promotion (promoção, 1 = produto em promoção, 0 = preço normal)
 
-O modelo utilizado concluiu que apenas as variáveis X_1 e X_2 tiveram impacto no modelo, sendo 
-X_1 - 31,67% de impacto
-X_2 - 3,5% de impacto
+O modelo utilizado concluiu que apenas as variáveis X<sub>1</sub> e X<sub>2</sub> tiveram impacto no modelo, sendo 
+X<sub>1</sub> - 31,67% de impacto
+X<sub>2</sub> - 3,5% de impacto
 
 ## Indicadores de Performance
 MAPE: 1.642
