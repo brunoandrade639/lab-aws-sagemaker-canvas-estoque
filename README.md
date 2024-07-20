@@ -19,6 +19,7 @@ MAPE: 1.642
 
 O valor do MAPE obtido, significa que o nosso modelo tende a errar em 164,2% os valores reais do estoque.
 
+
 RMSE: 30,304
 
 O valor no RMSE obtido, nos mostra que em média, tendemos a errar em 30 unidades os valores dos produtos. 
